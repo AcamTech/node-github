@@ -21,11 +21,13 @@ github.issues.getForRepo({
   repo: 'node-github',
   headers: customHeaders
 }, function (err, res) {
+  if (err) throw err
   showIssueIds(res)
   console.log('END of PAGE 1')
 
   if (github.hasNextPage(res)) {
     github.getNextPage(res, customHeaders, function (err, res) {
+      if (err) throw err
       showIssueIds(res)
     })
   }

@@ -21,6 +21,7 @@ github.repos.getReleases({
   owner: testRepo.owner,
   repo: testRepo.repo
 }, function (err, res) {
+  if (err) throw err
   var releases = res.data
   if (releases.length === 0) {
     return
@@ -34,6 +35,7 @@ github.repos.getReleases({
     repo: testRepo.repo,
     id: releaseId
   }, function (err, res) {
+    if (err) throw err
     var assets = res.data
     if (assets.length === 0) {
       return
@@ -46,10 +48,11 @@ github.repos.getReleases({
       owner: testRepo.owner,
       repo: testRepo.repo,
       id: assetId
-            // headers: {
-            //     "Accept": "application/octet-stream"
-            // }
+      // headers: {
+      //     "Accept": "application/octet-stream"
+      // }
     }, function (err, res) {
+      if (err) throw err
       console.log(res)
     })
   })

@@ -17,6 +17,7 @@ github.search.repos({
   sort: 'stars',
   order: 'desc'
 }, function (err, res) {
+  if (err) throw err
   for (var itemKey in res['items']) {
     var item = res['items'][itemKey]
     var url = item['html_url']

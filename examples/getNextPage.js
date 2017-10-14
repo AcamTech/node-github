@@ -13,6 +13,7 @@ github.authenticate({
 github.repos.getAll({
   'affiliation': 'owner,organization_member'
 }, function (err, res) {
+  if (err) throw err
   if (github.hasNextPage(res)) {
     console.log(res.data.length)
     github.getNextPage(res, nextFunc)
@@ -20,5 +21,6 @@ github.repos.getAll({
 })
 
 function nextFunc (err, res) {
+  if (err) throw err
   console.log(res.data.length)
 }

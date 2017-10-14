@@ -17,16 +17,16 @@ github.pullRequests.getReviews({
   repo: 'test',
   number: 1
 }, function (err, res) {
-    // console.log(err, res);
+  if (err) throw err
 
   var reviewId = res[0]['id']
-    // console.log(reviewId);
   github.pullRequests.getReview({
     owner: 'brassafrax',
     repo: 'test',
     number: 1,
     id: reviewId
   }, function (err, res) {
-    console.log(err, res)
+    if (err) throw err
+    console.log(res)
   })
 })
