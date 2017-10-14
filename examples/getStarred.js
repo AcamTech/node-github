@@ -12,7 +12,7 @@ github.authenticate({
 
 var starredRepos = []
 
-var req = github.activity.getStarredRepos({ per_page: 100}, getRepos)
+github.activity.getStarredRepos({per_page: 100}, getRepos)
 function getRepos (err, res) {
   if (err) {
     return false

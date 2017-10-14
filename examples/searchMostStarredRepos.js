@@ -21,7 +21,7 @@ github.search.repos({
   for (var itemKey in res['items']) {
     var item = res['items'][itemKey]
     var url = item['html_url']
-    var star_count = item['stargazers_count']
-    console.log(url + ' (' + star_count + ')')
+    var starCount = item['stargazers_count']
+    console.log(url + ' (' + starCount + ')')
   }
 })

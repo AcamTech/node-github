@@ -2,5 +2,5 @@
 
 var Github = require('./../lib/index')
 
-var g1 = new Github()
-var g2 = new Github()
+var g1 = new Github() // eslint-disable-line
+var g2 = new Github() // eslint-disable-line
