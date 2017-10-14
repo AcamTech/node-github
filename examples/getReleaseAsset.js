@@ -22,7 +22,7 @@ github.repos.getReleases({
   repo: testRepo.repo
 }, function (err, res) {
   var releases = res.data
-  if (releases.length == 0) {
+  if (releases.length === 0) {
     return
   }
   var release = releases[0]
@@ -35,7 +35,7 @@ github.repos.getReleases({
     id: releaseId
   }, function (err, res) {
     var assets = res.data
-    if (assets.length == 0) {
+    if (assets.length === 0) {
       return
     }
     var asset = assets[0]
